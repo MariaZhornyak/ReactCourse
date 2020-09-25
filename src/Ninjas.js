@@ -1,31 +1,6 @@
 import React from "react";
 
-export const Ninjas = ({ ninjas }) => {
-    // const ninjaList = ninjas.map(ninja => {
-    //     if (ninja.age > 18) {
-    //         return (
-    //             <div className='ninja' key={ ninja.id }>
-    //             <div>name: { ninja.name }</div>
-    //             <div>age: { ninja.age }</div>
-    //             <div>book: { ninja.book }</div>
-    //         </div>
-    //         )
-    //     } else {
-    //         return null;
-    //     }
-    // });
-
-    // const ninjaList = ninjas.map(ninja => {
-    //     //condition ? (returns if true) : (returns if false)
-    //     return ninja.age > 20 ? (
-    //         <div className='ninja' key={ ninja.id }>
-    //             <div>name: { ninja.name }</div>
-    //             <div>age: { ninja.age }</div>
-    //             <div>book: { ninja.book }</div>
-    //         </div>
-    //     ) : null;
-    // });
-
+export const Ninjas = ({ ninjas, deleteNinja }) => {
     return (
         <div className='ninja-list'>
             {
@@ -36,6 +11,7 @@ export const Ninjas = ({ ninjas }) => {
                             <div>name: { ninja.name }</div>
                             <div>age: { ninja.age }</div>
                             <div>book: { ninja.book }</div>
+                            <button onClick={ () => {deleteNinja(ninja.id)} }>Delete Ninja</button>
                         </div>
                         )
                     } else {
